@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import About from './component/About';
+import Home from './component/Home';
+import Login from './component/Login';
+import Menu from './component/Menu';
+import Navbar from './component/Navbar';
+import Spinner from './component/Spinner';
+import Contact from './component/contact';
+import {
+    Route,
+    BrowserRouter as Router,
+    Routes
+} from 'react-router-dom';
 
-function App() {
+const App = () => {
+  const [showSpinner, setShowSpinner] = useState(true);
+
+  useEffect(() => {
+    const timer=setTimeout(() => {
+      setShowSpinner(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <Router>
+          <div className="App">
+            {showSpinner?(
+              <Spinner/>
+            ):(
+              <div>
+                <Navbar/>
+                <Routes>
+                  <Route exact path='/' element={<Home />} />
+                  <Route exact path='/menu' element={<Menu />} />
+                  <Route exact path='/about' element={<About />} />
+                  <Route exact path='/contact' element={<Contact />} />
+                  <Route exact path='/login' element={<Login />} />
+                </Routes>
+              </div>
+            )}
+          </div>
+        </Router>
+      );
 }
 
 export default App;
+
