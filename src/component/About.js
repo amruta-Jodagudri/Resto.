@@ -1,11 +1,11 @@
 import React from 'react';
-import discount from '../img/discoount.jpg';
 import healthy from '../img/best.jpg';
 import delivery from "../img/delivery.jpg";
+import discount from '../img/discoount.jpg';
 import aboutBG from "../img/landing1BG.jpg";
 
 const About = () => {
-  return (
+    return (
     <div>
         <div className="card text-bg-dark">
         <img src={aboutBG} style={{height:'850px',width:'100%',filter:'blur(9px'}} className="card-img" alt="..."/>
