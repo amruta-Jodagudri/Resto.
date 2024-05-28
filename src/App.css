@@ -56,7 +56,7 @@ header .navbar-nav a{
 	color: var(--light-color);
 	border-radius: .5rem;
 	padding: .5rem 1.5rem;
-/*	font-size: 1.7rem;*/
+	color: white;
 }
 
 .navbar header ul li .nav-item1{

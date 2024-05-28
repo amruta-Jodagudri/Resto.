@@ -1,0 +1,8 @@
+.Navbar {
+    width: 100%;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white !important; /* Ensure the links are white */
+    font-weight: bold;
+}

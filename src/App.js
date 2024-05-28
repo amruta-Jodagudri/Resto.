@@ -1,4 +1,11 @@
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes
+} from 'react-router-dom';
 import './App.css';
 import About from './component/About';
 import Home from './component/Home';
@@ -7,11 +14,6 @@ import Menu from './component/Menu';
 import Navbar from './component/Navbar';
 import Spinner from './component/Spinner';
 import Contact from './component/contact';
-import {
-    Route,
-    BrowserRouter as Router,
-    Routes
-} from 'react-router-dom';
 
 const App = () => {
   const [showSpinner, setShowSpinner] = useState(true);
