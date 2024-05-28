@@ -19,7 +19,7 @@
 
 .content {
   position: absolute;
-  top: 150px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -48,5 +48,5 @@
 
 .info-cards {
   position: relative;
-  top: 400px;
+  top: 300px;
 }
