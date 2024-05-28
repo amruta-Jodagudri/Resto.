@@ -1,0 +1,13 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+.spinner-image {
+    max-width: 100%;
+    height: auto;
+    width: 50%;
+    max-width: 580px;
+}

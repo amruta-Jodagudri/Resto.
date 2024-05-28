@@ -1,60 +1,55 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginBG from '../img/loginBG.webp';
-import {useNavigate} from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
-  const [text, setText] = useState();
+  const [text, setText] = useState('');
   const navigate = useNavigate();
 
-  const HandleOnclick=()=>{
-    let newText = "";
-    setText(newText);
+  const handleOnClick = (e) => {
+    e.preventDefault();
+    setText('');
     alert("Logged in successfully!");
     navigate('/');
-  }
+  };
 
   return (
-    <div>
-    <div class="card text-bg-dark">
-      <img src={LoginBG} class="card-img" alt="..."  style={{height:'635px'}}/>
-      <div class="card-img-overlay">
-        <h2 class="card-title text-center" style={{marginTop:'80px',color:'black',fontWeight:'bold'}}>Login to Resto.</h2>
-        <div style={{height:'400px',width:'600px',marginLeft:'27%',marginTop:'30px'}}>
-            <div className="row">
-                  <div className="col">
-                    <input value={text} type="text" className="form-control" placeholder="First name" aria-label="First name" required/>
-                  </div>
-                  <div className="col">
-                    <input value={text} type="text" className="form-control" placeholder="Last name" aria-label="Last name" required/>
-                  </div>
-            </div>
-            <form style={{color:'white'}}>
-              <div className="mb-3">
-                <div className="col" style={{paddingTop:'20px'}}>
-                    <input value={text} type="email" className="form-control" placeholder="E-mail Address" aria-label="Email" required/>
+    <div className="login-container">
+      <div className="card text-bg-dark login-card">
+        <img src={LoginBG} className="card-img login-bg-img" alt="Login Background" />
+        <div className="card-img-overlay login-overlay">
+          <h2 className="card-title text-center login-title">Login to Resto.</h2>
+          <div className="login-form-container">
+            <form onSubmit={handleOnClick}>
+              <div className="row mb-3">
+                <div className="col">
+                  <input type="text" className="form-control" placeholder="First name" aria-label="First name" required />
                 </div>
-                <div id="emailHelp" className="form-text" style={{color:'white'}}>We'll never share your email with anyone else.</div>
+                <div className="col">
+                  <input type="text" className="form-control" placeholder="Last name" aria-label="Last name" required />
+                </div>
               </div>
               <div className="mb-3">
-                <div className="col">
-                  <input value={text} type="password" className="form-control" placeholder="Password" aria-label="password" required/>
-                </div>
+                <input type="email" className="form-control" placeholder="E-mail Address" aria-label="Email" required />
+                <div id="emailHelp" className="form-text" style={{ color: 'white' }}>We'll never share your email with anyone else.</div>
+              </div>
+              <div className="mb-3">
+                <input type="password" className="form-control" placeholder="Password" aria-label="Password" required />
               </div>
               <div className="mb-3 form-check">
-                <input value={text} type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                <label className="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
               </div>
-              <div className='text-center'>
-                <button type="submit" className="btn btn-primary" onClick={HandleOnclick}>Sign-in</button>
-                {/* <button style={{marginLeft:'20px'}} type='submit' className='btn btn-primary' onClick={handleLoginHistory}> whats Cooking </button> */}
+              <div className="text-center">
+                <button type="submit" className="btn btn-primary">Sign-in</button>
               </div>
             </form>
           </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 }
 
 export default Login;
-
