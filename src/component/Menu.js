@@ -1,13 +1,14 @@
 import React from 'react';
+import './Menu.css';
 import MenuItem from './MenuItem';
 import menuData from './menuData';
 
 const Menu = () => {
   return (
-    <div className="menu" style={{marginTop:'70px'}}>
+    <div className="menu">
       {menuData.map((category, index) => (
         <div key={index} className="menu-category">
-          <h3 className='text-center' style={{fontWeight:'bold',backgroundColor:'grey',color:'white'}}>{category.name}</h3>
+          <h3 className='text-center category-title'>{category.name}</h3>
           <div className="menu-items">
             {category.items.map((item, itemIndex) => (
               <MenuItem key={itemIndex} {...item} />
@@ -20,3 +21,4 @@ const Menu = () => {
 };
 
 export default Menu;
+

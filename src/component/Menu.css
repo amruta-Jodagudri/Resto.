@@ -1,0 +1,27 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .menu-category {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .category-title {
+    font-weight: bold;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
