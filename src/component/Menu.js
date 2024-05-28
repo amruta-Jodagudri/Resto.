@@ -5,7 +5,7 @@ import menuData from './menuData';
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu" >
       {menuData.map((category, index) => (
         <div key={index} className="menu-category">
           <h3 className='text-center category-title'>{category.name}</h3>
